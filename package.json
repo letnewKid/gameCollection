@@ -1,0 +1,22 @@
+{
+  "name": "gamecollection",
+  "version": "1.0.0",
+  "description": "This is an app to keep track of a gamecollection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/letnewKid/gameCollection.git"
+  },
+  "keywords": [
+    "Gamecollecting"
+  ],
+  "author": "Tevin McQuilkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/letnewKid/gameCollection/issues"
+  },
+  "homepage": "https://github.com/letnewKid/gameCollection#readme"
+}
