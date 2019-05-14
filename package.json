@@ -14,9 +14,30 @@
     "Gamecollecting"
   ],
   "author": "Tevin McQuilkin",
-  "license": "ISC",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.7",
+    "nodemon": "^1.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.28.3"
+  },
   "bugs": {
     "url": "https://github.com/letnewKid/gameCollection/issues"
   },
-  "homepage": "https://github.com/letnewKid/gameCollection#readme"
+  "homepage": "https://github.com/letnewKid/gameCollection#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
+  }
 }
