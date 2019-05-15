@@ -14,6 +14,11 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
@@ -27,6 +32,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '/'),
     port: 8080,
+    proxy: {
+      '/login': 'http://localhost:3000',
+    },
     publicPath: 'http://localhost:8080/build/',
     hotOnly: true,
   },
