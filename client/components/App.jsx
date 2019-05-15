@@ -1,12 +1,10 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import UserContainer from './UserContainer';
 
 const App = () => (
-  <div>
-    <h1>I am the app </h1>
-    <section>hello</section>
-    <section>sup</section>
-    <h1>sup</h1>
+  <div id="app">
+    <UserContainer />
   </div>
 );
 export default hot(module)(App);

@@ -1,0 +1,24 @@
+
+#app{
+    display:flex;
+    justify-content: center;
+}
+
+.userContainer{
+    background-color: #ff8246;
+    display:flex;
+    padding: 200px;
+}
+
+.submit {
+    background-color: #373a6d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
