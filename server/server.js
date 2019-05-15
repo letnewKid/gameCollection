@@ -1,10 +1,9 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-const gameEntry = require('../db/Seed/databaseSeed');
 
 mongoose.connect(
-  'mongodb+srv://tevin:tevin123@maincluster-hucjt.mongodb.net/Test?retryWrites=true',
+  'mongodb+srv://tevin:tevin123@maincluster-hucjt.mongodb.net/gamecollection?retryWrites=true',
   { useNewUrlParser: true }
 );
 const db = mongoose.connection;
