@@ -3,13 +3,18 @@ const rawData = require('../Seed/rawSeedData');
 
 const gameController = {
   getAllGames: (req, res) => {
-    const { currentUser } = req.params;
-    console.log(' I am the current user', currentUser);
     GameEntry.find({}, (err, gameEntries) => {
+      if (err) return res.status(404).send('IT no work for you my friend');
       res.json(gameEntries);
     });
   },
-  addGame: () => {},
+  addGame: (req, res) => {
+    const newEntry = req.body;
+    GameEntry.create(newEntry.data, (err, doc) => {
+      if (err) console.error(err);
+      return res.json(doc);
+    });
+  },
   deleteGame: () => {},
   seedDb: (req, res) => {
     // gets user information from user information from req.body

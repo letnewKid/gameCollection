@@ -34,15 +34,19 @@ class UserContainer extends Component {
         const newState = Object.assign({}, this.state);
         res.data.forEach(game => {
           newState.gameCollection.push(game);
+          newState.totalGames += 1;
         });
         this.setState(newState);
       })
       .catch(err => console.error(err));
   }
 
-  addGame() {
+  addGame(gameData) {
     axios
-      .post('http://localhost:3000/addGame', { user: this.state.currentUser })
+      .post('http://localhost:3000/addGame', {
+        user: this.state.currentUser,
+        data: gameData,
+      })
       .then(res => console.log('Database has been seeded', res))
       .catch(err => console.error('this is a seed', err));
   }
@@ -73,27 +77,12 @@ class UserContainer extends Component {
         this.setState(newState);
       })
       .catch(err => console.log(err));
-    console.log('this is the user', this.state.currentUser);
   }
 
   render() {
     const formCondition = this.state.loginSubmited;
     let userOutput;
     if (formCondition) {
-      // userOutput = <LoginForm loginHandler={this.handleLogin} />;
-      // const gameEntries = [];
-      // for (let i = 0; i < this.state.gameCollection.length; i++) {
-      //   const currGame = this.state.gameCollection[i];
-      //   gameEntries.push(
-      //     <GameEntry
-      //       name={currGame.name}
-      //       console={currGame.console}
-      //       condition={currGame.condition}
-      //       Qty={currGame.Qty}
-      //       comment={currGame.comment}
-      //     />
-      //   );
-      // }
       userOutput = (
         <div>
           <GameContainer

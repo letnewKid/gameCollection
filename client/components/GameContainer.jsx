@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import axios from 'axios';
 import GameEntry from './GameDisplay';
 // This is class compenent that gets the data from a take the
+
 class GameContainer extends Component {
   constructor(props) {
     super(props);
@@ -19,16 +20,37 @@ class GameContainer extends Component {
           condition={currGame.condition}
           Qty={currGame.Qty}
           comment={currGame.comment}
+          Id={i}
         />
       );
     }
 
     return (
       <section>
+        <form id="gameInputform">
+          <input className="gameinputField" type="text" placeholder="name" />
+          <input className="gameinputField" type="text" placeholder="console" />
+          <input
+            className="gameinputField"
+            type="text"
+            placeholder="condition"
+          />
+          <input className="gameinputField" type="text" placeholder="Qty" />
+          <input className="gameinputField" type="text" placeholder="comment" />
+        </form>
         <button
           type="button"
-          onClick={e => {
-            this.props.addGame();
+          onClick={() => {
+            const textValues = document.querySelectorAll('.gameinputField');
+            const text = Array.from(textValues).map(elm => elm.value);
+            const [name, console, condition, qty, comment] = text;
+            const gameEntryObject = {};
+            gameEntryObject.name = name;
+            gameEntryObject.console = console;
+            gameEntryObject.condition = condition;
+            gameEntryObject.qty = qty;
+            gameEntryObject.comment = comment;
+            this.props.addGame(gameEntryObject);
           }}
         >
           add that game

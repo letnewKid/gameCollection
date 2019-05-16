@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 app.get('/gameAll', getAllGames);
-app.post('/addGame', seedDb);
+app.post('/addGame', addGame);
 app.post('/signUp', addUser);
 app.post('/login', verifyUser);
 app.get('*', (req, res) => {
