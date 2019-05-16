@@ -1,23 +1,32 @@
 import React from 'react';
 
-export default function signupForm(props) {
+export default function signupForm({ signUpHandler }) {
+  function onclickHandler(e) {
+    e.preventDefault();
+    const username = document.querySelector('#signUpUser').value;
+    const password = document.querySelector('#signUpPassword').value;
+    const signUpData = {};
+    signUpData.username = username;
+    signUpData.password = password;
+    signUpHandler(signUpData);
+  }
   return (
     <form>
       <h2>Please SignUp</h2>
-      <lable>
+      <label>
         <b>Username</b>
-      </lable>
+      </label>
       <div>
-        <input type="text" />
+        <input type="text" id="signUpUser" />
       </div>
       <br />
-      <lable>
+      <label>
         <b>Password</b>
-      </lable>
+      </label>
       <br />
-      <input type="text" />
+      <input type="text" id="signUpPassword" />
       <br />
-      <button className="submit" type="button">
+      <button className="submit" type="button" onClick={onclickHandler}>
         {' '}
         submit{' '}
       </button>

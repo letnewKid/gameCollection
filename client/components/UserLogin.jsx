@@ -15,16 +15,16 @@ export default function loginForm({loginHandler}) {
     return (
     <form>
         <h2>Please Login</h2>
-      <lable>
+      <label>
         <b>Username</b>
-      </lable>
+      </label>
       <div>
         <input type="text" id="loginUser"/>
       </div>
       <br />
-      <lable>
+      <label>
         <b>Password</b>
-      </lable>
+      </label>
       <br />
       <input type="text" id="loginPassword"/>
       <br />

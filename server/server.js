@@ -21,9 +21,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/build', express.static(path.join(__dirname, '../build')));
-// app.get('/build/build.js', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../build', 'build.js'));
-// });
+
 app.get('/', (req, res) => {
   console.log('I am in the get');
   res.sendFile(path.join(__dirname, '../index.html'));
