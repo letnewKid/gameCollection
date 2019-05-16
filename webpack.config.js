@@ -34,8 +34,10 @@ module.exports = {
     port: 8080,
     proxy: {
       '/login': 'http://localhost:3000',
+      '/signUp': 'http:locolhost:3000',
     },
     publicPath: 'http://localhost:8080/build/',
-    hotOnly: true,
+    hot: true,
+    historyApiFallback: true,
   },
 };
