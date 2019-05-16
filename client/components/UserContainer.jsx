@@ -42,6 +42,7 @@ class UserContainer extends Component {
   }
 
   addGame(gameData) {
+    console.log('gameData', gameData);
     axios
       .post('http://localhost:3000/addGame', {
         user: this.state.currentUser,

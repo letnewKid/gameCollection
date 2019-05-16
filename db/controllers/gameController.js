@@ -10,6 +10,7 @@ const gameController = {
   },
   addGame: (req, res) => {
     const newEntry = req.body;
+    console.log('I am the entry', newEntry);
     GameEntry.create(newEntry.data, (err, doc) => {
       if (err) console.error(err);
       return res.json(doc);

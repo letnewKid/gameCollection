@@ -12,7 +12,6 @@ class GameContainer extends Component {
     const gameEntries = [];
     for (let i = 0; i < this.props.gameCollection.length; i++) {
       const currGame = this.props.gameCollection[i];
-      console.log('curre game', currGame);
       gameEntries.push(
         <GameEntry
           name={currGame.name}
@@ -42,7 +41,7 @@ class GameContainer extends Component {
             type="button"
             id="getGames"
             onClick={() => {
-              const textValues = document.querySelectorAll('.gameinputField');
+              const textValues = document.querySelectorAll('.gameInputField');
               const text = Array.from(textValues).map(elm => elm.value);
               const [name, console, condition, qty, comment] = text;
               const gameEntryObject = {};
@@ -51,6 +50,7 @@ class GameContainer extends Component {
               gameEntryObject.condition = condition;
               gameEntryObject.qty = qty;
               gameEntryObject.comment = comment;
+
               this.props.addGame(gameEntryObject);
             }}
           >
