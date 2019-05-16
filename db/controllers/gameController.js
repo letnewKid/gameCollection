@@ -2,7 +2,13 @@ const GameEntry = require('../models/gameEntry');
 const rawData = require('../Seed/rawSeedData');
 
 const gameController = {
-  getAllGames: () => {},
+  getAllGames: (req, res) => {
+    const { currentUser } = req.params;
+    console.log(' I am the current user', currentUser);
+    GameEntry.find({}, (err, gameEntries) => {
+      res.json(gameEntries);
+    });
+  },
   addGame: () => {},
   deleteGame: () => {},
   seedDb: (req, res) => {
@@ -21,7 +27,7 @@ const gameController = {
     }, []);
     GameEntry.insertMany(seedEntries, (err, gameEntries) => {
       if (err) console.error('Your error is', err);
-      console.log('Seeded GameEntries', gameEntries);
+      res.json(gameEntries);
     });
   },
   updateGame: () => {},

@@ -4,7 +4,9 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const UserController = require('../db/controllers/userController');
+const GameController = require('../db/controllers/gameController');
 
+const { seedDb, addGame, getAllGames } = GameController;
 const { addUser, verifyUser } = UserController;
 
 mongoose.connect(
@@ -23,10 +25,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
 app.get('/', (req, res) => {
-  console.log('I am in the get');
   res.sendFile(path.join(__dirname, '../index.html'));
 });
-app.get('/seed');
+app.get('/gameAll', getAllGames);
+app.post('/addGame', seedDb);
 app.post('/signUp', addUser);
 app.post('/login', verifyUser);
 app.get('*', (req, res) => {
