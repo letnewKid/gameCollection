@@ -8,7 +8,7 @@
     "envstart": "nodenv . nodemon server/server.js",
     "start": "nodemon server/server.js",
     "build": "webpack",
-    "dev": " nodemon server/server.js &webpack-dev-server --open"
+    "dev": " nodemon server/server.js & webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.5.7",
     "nodenv": "^0.1.0",
