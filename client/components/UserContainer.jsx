@@ -4,7 +4,7 @@ import axios from 'axios';
 import LoginForm from './UserLogin';
 import SignUpForm from './UserSignup';
 import GameContainer from './GameContainer';
-import GameEntry from './GameDisplay';
+// import GameEntry from './GameDisplay';
 
 class UserContainer extends Component {
   constructor() {

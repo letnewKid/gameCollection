@@ -8,8 +8,14 @@
     background-color: #ff8246;
     display:flex;
     padding: 200px;
+    justify-content: center;
 }
-
+section{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
 .submit {
     background-color: #373a6d;
     color: white;
@@ -21,4 +27,17 @@
   }
   button:hover {
     opacity: 0.8;
+  }
+  #gameInputForm{
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #beeef7;
+  }
+  .gameInputField{
+    margin: 20px;
+  }
+  #getGames{
+    padding-left: 25px;
+    padding-right: 25px;
   }

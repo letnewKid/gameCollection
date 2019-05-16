@@ -27,34 +27,36 @@ class GameContainer extends Component {
 
     return (
       <section>
-        <form id="gameInputform">
-          <input className="gameinputField" type="text" placeholder="name" />
-          <input className="gameinputField" type="text" placeholder="console" />
+        <h1>The Collection</h1>
+        <form id="gameInputForm">
+          <input className="gameInputField" type="text" placeholder="name" />
+          <input className="gameInputField" type="text" placeholder="console" />
           <input
-            className="gameinputField"
+            className="gameInputField"
             type="text"
             placeholder="condition"
           />
-          <input className="gameinputField" type="text" placeholder="Qty" />
-          <input className="gameinputField" type="text" placeholder="comment" />
+          <input className="gameInputField" type="text" placeholder="Qty" />
+          <input className="gameInputField" type="text" placeholder="comment" />
+          <button
+            type="button"
+            id="getGames"
+            onClick={() => {
+              const textValues = document.querySelectorAll('.gameinputField');
+              const text = Array.from(textValues).map(elm => elm.value);
+              const [name, console, condition, qty, comment] = text;
+              const gameEntryObject = {};
+              gameEntryObject.name = name;
+              gameEntryObject.console = console;
+              gameEntryObject.condition = condition;
+              gameEntryObject.qty = qty;
+              gameEntryObject.comment = comment;
+              this.props.addGame(gameEntryObject);
+            }}
+          >
+            add that game
+          </button>
         </form>
-        <button
-          type="button"
-          onClick={() => {
-            const textValues = document.querySelectorAll('.gameinputField');
-            const text = Array.from(textValues).map(elm => elm.value);
-            const [name, console, condition, qty, comment] = text;
-            const gameEntryObject = {};
-            gameEntryObject.name = name;
-            gameEntryObject.console = console;
-            gameEntryObject.condition = condition;
-            gameEntryObject.qty = qty;
-            gameEntryObject.comment = comment;
-            this.props.addGame(gameEntryObject);
-          }}
-        >
-          add that game
-        </button>
         <button
           type="button"
           onClick={e => {
