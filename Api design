@@ -80,4 +80,6 @@ paths:
                                         
             responses:
             '201':
-                description: Created
+                description: Created game
+            '400':
+                description: Game not added
